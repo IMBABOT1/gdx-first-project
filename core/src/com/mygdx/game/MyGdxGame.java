@@ -9,6 +9,13 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class MyGdxGame extends ApplicationAdapter {
     private SpriteBatch batch;
     private Tank tank;
+    private Aim aim;
+
+
+    public Tank getTank() {
+        return tank;
+    }
+
 
     // Домашнее задание:
     // 1. Не дайте танку уехать за пределы экрана
@@ -18,6 +25,7 @@ public class MyGdxGame extends ApplicationAdapter {
     public void create() {
         batch = new SpriteBatch();
         tank = new Tank();
+        aim = new Aim(this);
     }
 
     @Override
@@ -28,11 +36,16 @@ public class MyGdxGame extends ApplicationAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         tank.render(batch);
+        aim.render(batch);
         batch.end();
     }
 
+
+
+
     public void update(float dt) {
         tank.update(dt);
+        aim.update(dt);
 //        if (Gdx.input.justTouched()) {
 //            System.out.println(Gdx.input.getX());
 //            System.out.println(Gdx.graphics.getHeight() - Gdx.input.getY());

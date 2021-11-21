@@ -6,6 +6,15 @@ import com.badlogic.gdx.math.MathUtils;
 
 public class Projectile {
     private Texture texture;
+
+    public float getX() {
+        return x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
     private float x;
     private float y;
     private float vx;

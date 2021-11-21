@@ -20,6 +20,12 @@ public class Tank {
 
     private int bound;
 
+
+
+    public Projectile getProjectile() {
+        return projectile;
+    }
+
     public Tank() {
         this.texture = new Texture("tank.png");
         this.textureWeapon = new Texture("weapon.png");
